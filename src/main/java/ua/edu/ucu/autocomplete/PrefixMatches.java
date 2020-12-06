@@ -1,40 +1,52 @@
 package ua.edu.ucu.autocomplete;
 
+import ua.edu.ucu.iters.RWayTrieWIterator;
+import ua.edu.ucu.tries.Tuple;
 import ua.edu.ucu.tries.Trie;
 
-/**
- *
- * @author andrii
- */
 public class PrefixMatches {
 
     private Trie trie;
 
     public PrefixMatches(Trie trie) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        this.trie = trie;
     }
 
     public int load(String... strings) {
-        throw new UnsupportedOperationException("Not supported yet.");        
+        int added = 0;
+        for (String stringLst: strings) {
+            String[] words = stringLst.split(" ");
+            for (String word: words) {
+                trie.add(new Tuple(word, word.length()));
+                added += 1;
+            }
+        }
+        return added;
     }
 
     public boolean contains(String word) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.trie.contains(word);
     }
 
     public boolean delete(String word) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.trie.delete(word);
     }
 
     public Iterable<String> wordsWithPrefix(String pref) {
-        throw new UnsupportedOperationException("Not supported yet.");        
+        if (pref.length() >= 2) {
+            return this.trie.wordsWithPrefix(pref);
+        }
+        return null;
     }
 
     public Iterable<String> wordsWithPrefix(String pref, int k) {
-        throw new UnsupportedOperationException("Not supported yet.");        
+        if (pref.length() >= 2 && k > 0) {
+            return RWayTrieWIterator.RWayTrieWeightIterable(this.trie, pref, k);
+        }
+        return null;
     }
 
     public int size() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return this.trie.size();
     }
 }
