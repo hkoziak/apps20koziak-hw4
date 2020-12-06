@@ -25,9 +25,9 @@ public class RWayTrieIterator implements Iterator<String>  {
 
     @Override
     public boolean hasNext() {
-        if (queue.peek() != null &&
-                ((Node) queue.peek()).letter == 'H' &&
-                ((Node) queue.peek()).next.isEmpty()) {
+        if (queue.peek() != null
+                && ((Node) queue.peek()).letter == 'H'
+                && ((Node) queue.peek()).next.isEmpty()) {
             return false;
         }
         return queue.peek() != null;

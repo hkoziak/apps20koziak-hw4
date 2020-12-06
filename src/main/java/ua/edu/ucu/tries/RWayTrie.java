@@ -3,11 +3,11 @@ package ua.edu.ucu.tries;
 import ua.edu.ucu.iters.RWayTrieIterator;
 import ua.edu.ucu.tools.Node;
 
-public class RWayTrie implements Trie{
+public class RWayTrie implements Trie {
 
-    public static int LETTERS_NUM = 26;
-    private int size = 0;
+    public static final int LETTERS_NUM = 26;
     public final Node start;
+    private int size = 0;
 
     public RWayTrie() {
         start = new Node('H');
@@ -42,7 +42,7 @@ public class RWayTrie implements Trie{
 
     @Override
     public boolean delete(String word) {
-        if (! this.contains(word)) {
+        if (!this.contains(word)) {
             return false;
         }
         Node current = this.start;
@@ -57,7 +57,7 @@ public class RWayTrie implements Trie{
                 System.out.println("No such words");
                 return false;
             }
-            if (current.last && i !=word.length() - 1) {
+            if (current.last && i != word.length() - 1) {
                 notToDeleteNode = current;
                 letterIdx = i;
             }

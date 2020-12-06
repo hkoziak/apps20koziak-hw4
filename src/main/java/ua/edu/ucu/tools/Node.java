@@ -16,10 +16,10 @@ public class Node {
         this.last = false;
     }
 
-    public Node addNext(char letter) {
-        if (!this.next.containsKey(letter)) {
-            this.next.put(letter, new Node(letter));
+    public Node addNext(char s) {
+        if (!this.next.containsKey(s)) {
+            this.next.put(s, new Node(s));
         }
-        return this.next.get(letter);
+        return this.next.get(s);
     }
 }

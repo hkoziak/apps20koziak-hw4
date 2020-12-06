@@ -1,6 +1,6 @@
 package ua.edu.ucu.tools;
 
-import ua.edu.ucu.tools.immutableList.ImmutableLinkedList;
+import ua.edu.ucu.tools.immutablelist.ImmutableLinkedList;
 
 public class Queue {
     private ImmutableLinkedList lst;

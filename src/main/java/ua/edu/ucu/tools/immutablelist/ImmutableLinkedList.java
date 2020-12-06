@@ -1,4 +1,4 @@
-package ua.edu.ucu.tools.immutableList;
+package ua.edu.ucu.tools.immutablelist;
 
 public class ImmutableLinkedList implements ImmutableList {
 

@@ -1,4 +1,4 @@
-package ua.edu.ucu.tools.immutableList;
+package ua.edu.ucu.tools.immutablelist;
 
 // У результаті змін, що призводять на модифікації (зміну стану)
 // колекції має повртатись нова колекція
