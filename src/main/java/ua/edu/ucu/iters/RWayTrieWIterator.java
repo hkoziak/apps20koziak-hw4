@@ -1,8 +1,6 @@
 package ua.edu.ucu.iters;
 
-import ua.edu.ucu.tries.RWayTrie;
 import ua.edu.ucu.tries.Trie;
-import ua.edu.ucu.tools.Queue;
 
 import java.util.Iterator;
 
@@ -48,7 +46,8 @@ public class RWayTrieWIterator implements Iterator<String> {
         return toReturn;
     }
 
-    public static Iterable<String> RWayTrieWeightIterable(Trie tree, String prefix, int k) {
+    public static Iterable<String> rWayTrieWIterable(
+            Trie tree, String prefix, int k) {
         return () -> new RWayTrieWIterator(tree, prefix, k);
     }
 }

@@ -90,7 +90,7 @@ public class RWayTrie implements Trie{
                 return null;
             }
         }
-        return RWayTrieIterator.RWayTrieIterable(current, s);
+        return RWayTrieIterator.rWayTrieIterable(current, s);
     }
 
     @Override

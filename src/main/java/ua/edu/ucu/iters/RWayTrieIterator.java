@@ -1,6 +1,5 @@
 package ua.edu.ucu.iters;
 
-import ua.edu.ucu.tries.RWayTrie;
 import ua.edu.ucu.tools.Queue;
 import ua.edu.ucu.tools.Node;
 
@@ -26,7 +25,9 @@ public class RWayTrieIterator implements Iterator<String>  {
 
     @Override
     public boolean hasNext() {
-        if (queue.peek() != null && ((Node) queue.peek()).letter == 'H' && ((Node) queue.peek()).next.isEmpty()) {
+        if (queue.peek() != null &&
+                ((Node) queue.peek()).letter == 'H' &&
+                ((Node) queue.peek()).next.isEmpty()) {
             return false;
         }
         return queue.peek() != null;
@@ -55,8 +56,7 @@ public class RWayTrieIterator implements Iterator<String>  {
         return prevWord;
     }
 
-    public static Iterable<String> RWayTrieIterable(Node node, String prefix) {
+    public static Iterable<String> rWayTrieIterable(Node node, String prefix) {
         return () -> new RWayTrieIterator(node, prefix);
     }
-
 }
